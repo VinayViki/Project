@@ -51,7 +51,7 @@ class _PhonelogsScreenState extends State<PhonelogsScreen> with  WidgetsBindingO
         children: [
           pt,
           //TextField(controller: t1, decoration: InputDecoration(labelText: "Phone number", contentPadding: EdgeInsets.all(10), suffixIcon: IconButton(icon: Icon(Icons.phone), onPressed: (){print("pressed");})),keyboardType: TextInputType.phone, textInputAction: TextInputAction.done, onSubmitted: (value) => call(value),),
-          FutureBuilder(future:  logs,builder: (context, snapshot){
+          FutureBuilder(future:  logs,builder: (context,AsyncSnapshot<Iterable<CallLogEntry>> snapshot){
             if(snapshot.connectionState == ConnectionState.done){
               Iterable<CallLogEntry> entries = snapshot.data;
               return Expanded(
